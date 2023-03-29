@@ -24,15 +24,32 @@ public class Ejercicio_7_App {
 						+ "FOREIGN KEY (cientifico) REFERENCES cientificos(DNI), "
 						+ "FOREIGN KEY (proyecto) REFERENCES proyecto(numero))");
 
-		/* Add values
-		Java_SQL.insertData(conexion, "UD18_EJ5", "despachos",
-				"(numero, capacidad) VALUES (1, 5), (2, 10), (3, 20), (4, 1), (5, 5)");
-		Java_SQL.insertData(conexion, "UD18_EJ5", "directores",
-				"(DNI, nombre, DNI_jefe, despacho) VALUES " + "('12345678A', 'Jose Marin', NULL, 4),"
-						+ "('77791527F', 'Josep Maria Pallas', '12345678A', 1),"
-						+ "('12345678B', 'Joan Lapeyra', '12345678A', 1),"
-						+ "('12345678C', 'Marta Cyrn', '77791527F', 2)," + "('12345678D', 'Sergi Gimenez', NULL, 3)");
-		*/
+		// Add values
+		Java_SQL.insertData(conexion, "UD18_EJ7", "cientificos",
+				"(DNI, nombre) VALUES " 
+						+ "('12345678A', 'Jose Marin'), " 
+						+ "('77791527F', 'Josep Pallas'), "
+						+ "('12345678B', 'Joan Lapeyra'), " 
+						+ "('12345678C', 'Marta Cyrn'), "
+						+ "('12345678D', 'Cientifico Ejemplo')");
+
+		Java_SQL.insertData(conexion, "UD18_EJ7", "proyecto",
+				"(numero, nombre, horas) VALUES " 
+						+ "('ABC1', 'Bootcamp Java', 350),"
+						+ "('ABC2', 'Acelerador de particulas', 2000),"
+						+ "('ABC3', 'Diseño base de datos', 20),"
+						+ "('ABC4', 'Renovacion hardware', 50)," 
+						+ "('ABC5', 'Desarrollo medicamentos', 1000)");
+		
+		Java_SQL.insertData(conexion, "UD18_EJ7", "asignado_a",
+				"(cientifico, proyecto) VALUES " 
+						+ "('12345678A', 'ABC1'),"
+						+ "('77791527F', 'ABC1'),"
+						+ "('12345678B', 'ABC1'),"
+						+ "('12345678C', 'ABC2')," 
+						+ "('12345678A', 'ABC4')," 
+						+ "('12345678D', 'ABC3')");
+
 		// Close connection
 		Java_SQL.closeConnection(conexion);
 
