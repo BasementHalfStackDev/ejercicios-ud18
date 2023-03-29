@@ -5,8 +5,10 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+// Utils to allow SQL queries with Java
 public class Java_SQL {
-
+	
+	// Function to establish connection with MySQL Database
 	public static Connection conectarDB() {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
@@ -20,6 +22,7 @@ public class Java_SQL {
 		return null;
 	}
 
+	// Function to close connection
 	public static void closeConnection(Connection conexion) {
 		try {
 			conexion.close();
@@ -30,6 +33,7 @@ public class Java_SQL {
 		}
 	}
 
+	// Function to create Databases
 	public static void createDB(String name, Connection conexion) {
 		try {
 			String query = "CREATE DATABASE " + name + ";";
@@ -41,6 +45,7 @@ public class Java_SQL {
 		}
 	}
 
+	// Function to create tables with fields
 	public static void createTable(Connection conexion, String DB, String tablename, String tablefields) {
 		try {
 			String QueryDB = "USE " + DB + ";";
@@ -57,6 +62,7 @@ public class Java_SQL {
 		}
 	}
 
+	// Function to insert values to DB Tables
 	public static void insertData(Connection conexion, String DB, String tablename, String values) {
 		try {
 			String QueryDB = "USE " + DB + ";";

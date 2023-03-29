@@ -11,7 +11,9 @@ public class Ejercicio_1_App {
 		
 		Connection conexion = Java_SQL.conectarDB();
 		
-		Java_SQL.createDB("DBTEST_JAVA", conexion);
+		Java_SQL.createDB("UD18-EJ1", conexion);
+		
+		Java_SQL.createTable(conexion, null, null, null);
 		
 		Java_SQL.closeConnection(conexion);
 
