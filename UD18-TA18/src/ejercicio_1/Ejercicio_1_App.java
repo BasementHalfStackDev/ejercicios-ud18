@@ -8,6 +8,7 @@ public class Ejercicio_1_App {
 	public static void main(String[] args) {
 		
 		Java_SQL.conectarDB();
+		// canvi random joan
 
 	}
 
